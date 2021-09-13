@@ -1,7 +1,7 @@
 from fastai.imports import *
 from fastai.vision import *
 from io import BytesIO
-import os
+import numpy as np
 
 from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
@@ -26,12 +26,13 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
+    pred = learn.predict(img)
     prediction = learn.predict(img)[0]
-    confidence = learn.predict(img)[1]
+    confidence = np.array(learn.predict(img)[-1][0]).item()
     return JSONResponse({'result': str(prediction),
-                         'confidence': str(confidence)
+                         'confidence': round(confidence * 100, 1),
                         })
 
 if __name__ == '__main__':
-    if 'serve' in sys.argv:
+    if 'app' in sys.argv:
         uvicorn.run(app=app, host='0.0.0.0', port=5000, log_level="info")
