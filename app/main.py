@@ -10,7 +10,7 @@ from starlette.staticfiles import StaticFiles
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
-app.mount('/static', StaticFiles(directory='../app/static'))
+app.mount('/static', StaticFiles(directory='./app/static'))
 
 path = Path(__file__).parent
 
