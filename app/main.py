@@ -25,7 +25,7 @@ async def homepage(request):
 async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
-    img = open_image(BytesIO(img_bytes)).resize(300)
+    img = open_image(BytesIO(img_bytes)).resize(500)
     pred = learn.predict(img)
     prediction = learn.predict(img)[0]
     confidence = np.array(learn.predict(img)[-1][0]).item()
