@@ -5,3 +5,4 @@ starlette==0.16.0
 gunicorn
 uvicorn
 fastai @ https://github.com/fastai/fastai1/archive/master.zip
+python-multipart==0.0.5
