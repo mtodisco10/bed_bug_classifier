@@ -29,7 +29,6 @@ async def analyze(request):
     pred = learn.predict(img)
     prediction = learn.predict(img)[0]
     confidence = np.array(learn.predict(img)[-1][0]).item()
-    img.close()
     return JSONResponse({'result': str(prediction),
                          'confidence': round(confidence * 100, 1),
                         })
