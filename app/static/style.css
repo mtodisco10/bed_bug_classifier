@@ -21,11 +21,11 @@ body {
 }
 
 .content {
-    margin-top: 5em;
+    margin-top: 3em;
 }
 
 .analyze {
-    margin-top: 5em;
+    margin-top: 3em;
 }
 
 .upload-label {
@@ -37,6 +37,12 @@ body {
     margin-top: 0.5em;
     padding: 10px;
     font-size: 13px;
+}
+
+.confidence-label {
+    margin-top: 0.5em;
+    padding: 10px;
+    font-size: 23px;
 }
 
 button.choose-file-button {

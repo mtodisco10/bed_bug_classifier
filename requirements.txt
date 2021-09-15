@@ -4,3 +4,7 @@ itsdangerous==2.0.1
 Jinja2==3.0.1
 MarkupSafe==2.0.1
 Werkzeug==2.0.1
+fastai @ https://github.com/fastai/fastai1/archive/master.zip
+starlette==0.16.0
+torch==1.9.0
+torchvision==0.10.0
