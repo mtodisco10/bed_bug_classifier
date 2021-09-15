@@ -3,4 +3,5 @@ torch==1.8.1+cpu
 torchvision==0.9.1+cpu
 starlette==0.16.0
 gunicorn
+uvicorn
 fastai @ https://github.com/fastai/fastai1/archive/master.zip
