@@ -29,9 +29,10 @@ async def analyze(request):
     pred = learn.predict(img)
     prediction = learn.predict(img)[0]
     confidence = np.array(learn.predict(img)[-1][0]).item()
-    return JSONResponse({'result': str(prediction),
-                         'confidence': round(confidence * 100, 1),
-                        })
+    return JSONResponse({
+        #'result': str(prediction),
+        'confidence': round(confidence * 100, 1),
+        })
 
 if __name__ == '__main__':
     if 'app' in sys.argv:
